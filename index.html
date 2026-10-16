@@ -288,9 +288,9 @@
   @keyframes wobble { 50% { transform: rotate(4deg) scale(1.05); } }
 
   /* --- Обычный вторник --- */
-  .day { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .day { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
   .day::before { content: ""; position: absolute; left: 6%; right: 6%; top: 37px; height: 1px; background: linear-gradient(90deg, transparent, var(--violet), var(--cyan), transparent); opacity: .7; }
-  .moment { padding: 22px 20px; }
+  .moment { padding: 20px 16px; }
   .moment time { position: relative; display: inline-block; font: 700 14px "JetBrains Mono", monospace; color: var(--cyan); background: var(--bg); padding: 4px 10px; border: 1px solid var(--stroke); border-radius: 999px; }
   .moment b { display: block; margin: 14px 0 6px; font-size: 17px; letter-spacing: -0.01em; }
   .moment p { color: var(--muted); font-size: 14px; }
@@ -339,6 +339,10 @@
   .reveal { opacity: 0; transform: translateY(24px); filter: blur(6px); transition: opacity .8s, transform .8s, filter .8s; }
   .reveal.in { opacity: 1; transform: none; filter: none; }
 
+  @media (min-width: 1001px) and (max-width: 1180px) {
+    .day { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .day::before { display: none; }
+  }
   @media (max-width: 1000px) {
     .nav-links { display: none; }
     .demo { grid-template-columns: 1fr; }
@@ -497,6 +501,7 @@
         <div class="moment glass reveal"><time>08:57</time><b>Ссылка уже открыта</b><p>Записал напомнил о паре и сам открыл Телемост. Осталось нажать «Записывать».</p></div>
         <div class="moment glass reveal"><time>09:00</time><b>Текст идёт сам</b><p>Речь становится текстом за пару секунд. Отвлеклись — ничего не потеряно.</p></div>
         <div class="moment glass reveal"><time>09:41</time><b>«Петров, вы с нами?»</b><p>Программа услышала фамилию и вывела вкладку занятия на передний план.</p></div>
+        <div class="moment glass reveal"><time>09:52</time><b>«Что он сейчас сказал?»</b><p>Отошли на пару минут — спросите, и ИИ перескажет, что было, по шагам.</p></div>
         <div class="moment glass reveal"><time>10:35</time><b>Конспект готов</b><p>Со слайдами и формулами — в Obsidian, в PDF для планшета и на Яндекс или Google Диске.</p></div>
         <div class="moment glass reveal"><time>18:00</time><b>«Что задали к среде?»</b><p>Спросите в чате по лекциям — ответ найдётся по расшифровке и конспекту.</p></div>
       </div>
@@ -574,8 +579,8 @@
 
         <div class="steps">
           <div class="st on" data-step="0"><span class="no">01 · Расписание</span><h3>Уведомление перед началом</h3><p>Сохраните график занятий в расписании и получайте уведомления прямо перед началом. Учитываются чётные и нечётные недели, переносы и дополнительные занятия, а ссылка на занятие откроется автоматически.</p><div class="tags"><span>чётные / нечётные недели</span><span>переносы</span><span>автооткрытие ссылки</span></div></div>
-          <div class="st" data-step="1"><span class="no">02 · Запись</span><h3>Расшифровка в реальном времени</h3><p>По нажатию клавиши активируется запись звука со вкладки. Транскрипция появляется в режиме реального времени с минимальной задержкой. С видеокартой NVIDIA распознавание идёт прямо на компьютере, без неё — в бесплатном облаке Groq или на процессоре. Микрофон не используется.</p><div class="tags"><span>Alt + Shift + R</span><span>ru · en · ru+en</span><span>NVIDIA или Groq</span></div></div>
-          <div class="st" data-step="2"><span class="no">03 · Уведомления</span><h3>Важное не пройдёт мимо</h3><p>Не желаете пропустить ничего важного? Программа уведомит вас о перекличке, упоминании вашей фамилии, домашнем задании, контрольной и заданных ключевых фразах.</p><div class="tags"><span>перекличка</span><span>ваша фамилия</span><span>задания и сроки</span><span>свои фразы</span></div></div>
+          <div class="st" data-step="1"><span class="no">02 · Запись</span><h3>Расшифровка в реальном времени</h3><p>Одним нажатием начинается запись звука со вкладки, и речь сразу становится текстом. Текст можно развернуть в большое окно. Связь оборвалась — запись продолжится в новой вкладке той же лекции. С видеокартой NVIDIA распознавание идёт прямо на компьютере, без неё — в бесплатном облаке Groq или на процессоре. Микрофон не используется.</p><div class="tags"><span>большое окно</span><span>ru · en · ru+en</span><span>NVIDIA или Groq</span></div></div>
+          <div class="st" data-step="2"><span class="no">03 · Уведомления</span><h3>Важное не пройдёт мимо</h3><p>Не желаете пропустить ничего важного? Программа уведомит вас о перекличке, упоминании вашей фамилии, домашнем задании, контрольной и заданных ключевых фразах. Каждое уведомление сверяется с итоговым текстом — лишние исчезают сами.</p><div class="tags"><span>перекличка</span><span>ваша фамилия</span><span>задания и сроки</span><span>свои фразы</span></div></div>
           <div class="st" data-step="3"><span class="no">04 · Конспект</span><h3>Готовый конспект после занятия</h3><p>ИИ составляет конспект по расшифровке и слайдам: определения, формулы, пошаговые инструкции, разобранные задачи и сроки. Результат сохраняется в Obsidian, в PDF для планшета и на Яндекс или Google Диск.</p><div class="tags"><span>Markdown</span><span>рукописный PDF</span><span>Яндекс · Google Диск</span></div></div>
         </div>
       </div>
@@ -626,7 +631,7 @@
 
   <section id="data">
     <div class="wrap">
-      <div class="head c reveal"><span class="eyebrow">Ваши данные</span><h2>Что где остаётся</h2><p>Запись начинается только по вашей клавише или кнопке «Записывать» в напоминании — сама программа ничего не записывает.</p></div>
+      <div class="head c reveal"><span class="eyebrow">Ваши данные</span><h2>Что где остаётся</h2><p>Запись начинается, только когда вы сами её включите, — без вашего нажатия программа ничего не записывает.</p></div>
       <div class="trust">
         <div class="tcard glass reveal" style="--c:var(--green)"><span class="tl">Остаётся на вашем ПК</span><ul><li>Звук и видео занятий</li><li>Расшифровки и конспекты</li><li>Ключи сервисов</li><li>История чата по лекциям</li></ul></div>
         <div class="tcard glass reveal" style="--c:var(--cyan)"><span class="tl">Уходит в выбранные вами сервисы</span><ul><li>Текст расшифровки — в Gemini или GigaChat, чтобы составить конспект</li><li>Звук — в Groq, только если вы его выбрали</li><li>Файлы — на Яндекс или Google Диск, если подключили</li><li>Снимки слайдов, которые не прочитались на ПК</li></ul></div>
