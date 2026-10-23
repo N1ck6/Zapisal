@@ -804,5 +804,15 @@
   document.querySelectorAll(".reveal").forEach((el, i) => { el.style.transitionDelay = (i % 3) * 80 + "ms"; io.observe(el); });
 
 </script>
+<script>
+  // ссылка на сайт с меткой (?src=inst) — кнопки «в бота» передают её дальше: в боте видно, откуда пришли (/activations)
+  (function () {
+    var src = (new URLSearchParams(location.search).get("src") || "").toLowerCase();
+    if (!/^[a-z0-9_]{2,16}$/.test(src)) return;
+    document.querySelectorAll('a[href*="t.me/LandingZapisalBot"]').forEach(function (a) {
+      a.href = a.href.replace(/start=[a-z_]+/, "start=site_" + src);
+    });
+  })();
+</script>
 </body>
 </html>
