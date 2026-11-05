@@ -107,6 +107,8 @@
   .proof { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 24px; font-size: 14px; line-height: 20px; color: var(--dim); }
   .proof span { display: inline-flex; align-items: center; gap: 8px; }
   .proof span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+  .phone-note { max-width: 680px; margin-top: 24px; padding: 12px 16px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); font-size: 14px; line-height: 20px; color: var(--muted); }
+  .final .phone-note { margin-inline: auto; }
   .copied { font-size: 14px; color: var(--ok); min-height: 20px; margin-top: 8px; }
   @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } .demo { margin-inline: auto; } }
   @media (max-width: 640px) { .hero { padding-top: 112px; } .hero h1 { font-size: 36px; line-height: 40px; } .cta .btn { flex: 1 1 100%; } }
@@ -258,17 +260,17 @@
         <h1>Слушайте пару.<br>Конспект запишется сам.</h1>
         <p class="sub">Записал записывает звук и видео онлайн-пары, показывает текст речи прямо во время занятия,
           сохраняет презентацию преподавателя и после пары собирает конспект.</p>
+        <p class="phone-note only-phone">💻 Записал — программа для компьютера с Windows. Бот в Telegram пришлёт ссылку на установку, откройте её на ПК.</p>
         <div class="cta" id="get">
           <a class="btn primary only-pc" data-dl href="https://github.com/N1ck6/Zapisal/releases/latest/download/Zapisal-Setup.exe">
             <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224 144v64a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8v-64a8 8 0 0 1 16 0v56h160v-56a8 8 0 0 1 16 0Zm-101.66 5.66a8 8 0 0 0 11.32 0l40-40a8 8 0 0 0-11.32-11.32L136 124.69V32a8 8 0 0 0-16 0v92.69L93.66 98.34a8 8 0 0 0-11.32 11.32Z"/></svg>
             Скачать для Windows</a>
-          <a class="btn primary only-phone" data-bot="pc" href="https://t.me/LandingZapisalBot?start=site_phone" target="_blank" rel="noopener">Отправить себе на компьютер</a>
+          <a class="btn primary only-phone" data-bot="pc" href="https://t.me/LandingZapisalBot?start=site_phone" target="_blank" rel="noopener"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M228.88 26.19a9 9 0 0 0-9.16-1.57L17.06 103.93a14.22 14.22 0 0 0 2.43 27.21L72 141.45V200a15.92 15.92 0 0 0 10 14.83 15.91 15.91 0 0 0 17.51-3.73l25.32-26.26L165 220a15.88 15.88 0 0 0 10.51 4 16.3 16.3 0 0 0 5-.79 15.85 15.85 0 0 0 10.67-11.63L231.77 35a9 9 0 0 0-2.89-8.81ZM78.15 126.35l-49.61-9.73 139.2-54.48ZM88 200v-47.48l24.79 21.74Zm87.53 8-82.68-72.5 119-85.29Z"/></svg>Открыть в Telegram</a>
           <button class="btn ghost only-phone" type="button" id="copyLink">Скопировать ссылку</button>
           <a class="btn ghost only-pc" href="#demo">Нажать ● в демо</a>
         </div>
         <div class="copied only-phone" id="copied" aria-live="polite"></div>
         <div class="proof"><span>3 недели бесплатно</span><span>Без регистрации и карты</span><span>Windows 10 и 11</span></div>
-        <p class="only-phone" style="margin-top:16px;color:var(--dim);font-size:14px;line-height:20px">Программа работает на компьютере. Бот в Telegram пришлёт ссылку — откройте её на ПК.</p>
       </div>
 
       <div class="demo" id="demo" aria-label="Демо окна расширения: нажмите кнопку записи">
@@ -395,10 +397,11 @@
     <div class="wrap reveal">
       <h2>Попробуйте на следующей паре</h2>
       <p>Установка и настройка — около 10 минут. Первые 3 недели бесплатно.</p>
+      <p class="phone-note only-phone">💻 Записал — программа для компьютера с Windows. Бот в Telegram пришлёт ссылку на установку, откройте её на ПК.</p>
       <div class="cta">
         <a class="btn primary only-pc" data-dl href="https://github.com/N1ck6/Zapisal/releases/latest/download/Zapisal-Setup.exe">Скачать для Windows</a>
         <a class="btn ghost only-pc" data-bot href="https://t.me/LandingZapisalBot?start=landing" target="_blank" rel="noopener">Telegram-бот</a>
-        <a class="btn primary only-phone" data-bot="pc" href="https://t.me/LandingZapisalBot?start=site_phone" target="_blank" rel="noopener">Отправить себе на компьютер</a>
+        <a class="btn primary only-phone" data-bot="pc" href="https://t.me/LandingZapisalBot?start=site_phone" target="_blank" rel="noopener"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M228.88 26.19a9 9 0 0 0-9.16-1.57L17.06 103.93a14.22 14.22 0 0 0 2.43 27.21L72 141.45V200a15.92 15.92 0 0 0 10 14.83 15.91 15.91 0 0 0 17.51-3.73l25.32-26.26L165 220a15.88 15.88 0 0 0 10.51 4 16.3 16.3 0 0 0 5-.79 15.85 15.85 0 0 0 10.67-11.63L231.77 35a9 9 0 0 0-2.89-8.81ZM78.15 126.35l-49.61-9.73 139.2-54.48ZM88 200v-47.48l24.79 21.74Zm87.53 8-82.68-72.5 119-85.29Z"/></svg>Открыть в Telegram</a>
       </div>
     </div>
   </section>
